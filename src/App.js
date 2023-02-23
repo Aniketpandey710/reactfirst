@@ -3,37 +3,25 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  var [value1, setValue1] = useState(0);
-  var [value2, setValue2] = useState(0);
-  var [res, setRes]=useState(0);
+  let [value1, setValue1] = useState(0);
+  let [value2, setValue2] = useState(0);
+  let [res, setRes]=useState(0);
 
   const addition = event => {
-    console.log(value1);
-    console.log(value2);
-    var res1=parseInt(value1)+parseInt(value2);
+    let res1=parseInt(value1)+parseInt(value2);
     setRes(res1);
-    console.log(res1);
   };
   const subtraction = event => {
-    console.log(value1);
-    console.log(value2);
-    var res1=parseInt(value1) - parseInt(value2);
+    let res1=parseInt(value1) - parseInt(value2);
     setRes(res1);
-    console.log(res1);
   };
   const multi = event => {
-    console.log(value1);
-    console.log(value2);
-    var res1=parseInt(value1) * parseInt(value2);
+    let res1=parseInt(value1) * parseInt(value2);
     setRes(res1);
-    console.log(res1);
   };
   const divi = event => {
-    console.log(value1);
-    console.log(value2);
-    var res1=parseInt(value1) / parseInt(value2);
+    let res1=parseInt(value1) / parseInt(value2);
     setRes(res1);
-    console.log(res1);
   };
   return (
     <div className="App">
