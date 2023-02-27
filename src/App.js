@@ -1,11 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
+import TodoList from './Todo/todoList';
+import Todoinput from './Todo/todoInput';
 
 function App() {
   let [value1, setValue1] = useState(0);
   let [value2, setValue2] = useState(0);
   let [res, setRes]=useState(0);
+  const [list,setList]=useState([]);
+  let addList=(inputText)=>{
+    setList([...list,inputText]);
+  }
 
   const addition = event => {
     let res1=parseInt(value1)+parseInt(value2);
@@ -52,6 +58,16 @@ function App() {
         <h3>Result</h3>
         <p id='res'>Result is : {res} </p>
         </div>
+        <hr></hr>
+        <p>Starting a Todo List</p>
+          <Todoinput addList={addList}/>
+          <h1>Todo List</h1>
+          <hr></hr>
+          {list.map((listItem,i)=>{
+            return(
+              <TodoList item={listItem} />
+            )
+          })}
       </header>
     </div>
     
